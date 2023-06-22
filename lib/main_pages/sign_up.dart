@@ -1,6 +1,8 @@
 import 'package:ala_nadafa/main_pages/log_in.dart';
 import 'package:flutter/material.dart';
 
+import 'main_screen.dart';
+
 class sign_up extends StatelessWidget {
   const sign_up({Key? key}) : super(key: key);
 
