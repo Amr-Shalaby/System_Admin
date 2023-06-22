@@ -1,3 +1,5 @@
+import 'package:ala_nadafa/main_pages/log_in.dart';
+import 'package:ala_nadafa/main_pages/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'drawer_main_page.dart';
 
@@ -20,19 +22,35 @@ class main_screen extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children:[
-                   Container(
-                      width: 70,
-                      height: 50,
-                      alignment: Alignment.center,
-                      child: Text("Sign Up",style: TextStyle(color: Colors.black),),
-                    ),
-                   Container(
-                      width: 60,
-                      height: 35,
-                      color: Colors.black,
-                      alignment: Alignment.center,
-                      child: Text("Log In",style: TextStyle(color: Colors.white),),
-                    ),
+                   InkWell(
+                     onTap: ()=>
+                         Navigator.push(
+                             context,
+                             MaterialPageRoute(builder: (context) => sign_up()
+                             )
+                         ),
+                     child: Container(
+                        width: 70,
+                        height: 50,
+                        alignment: Alignment.center,
+                        child: Text("Sign Up",style: TextStyle(color: Colors.black),),
+                      ),
+                   ),
+                   InkWell(
+                     onTap: ()=>
+                         Navigator.push(
+                             context,
+                             MaterialPageRoute(builder: (context) => log_in()
+                             )
+                         ),
+                     child: Container(
+                        width: 60,
+                        height: 35,
+                        color: Colors.black,
+                        alignment: Alignment.center,
+                        child: Text("Log In",style: TextStyle(color: Colors.white),),
+                      ),
+                   ),
                 ]
             ),
           )
