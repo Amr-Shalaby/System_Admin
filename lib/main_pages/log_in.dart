@@ -1,6 +1,9 @@
 import 'package:ala_nadafa/main_pages/main_screen.dart';
 import 'package:ala_nadafa/main_pages/sign_up.dart';
 import 'package:flutter/material.dart';
+import 'widgets/text_box.dart';
+import 'widgets/sign_button.dart';
+
 
 class log_in extends StatelessWidget {
   const log_in({Key? key}) : super(key: key);
@@ -9,7 +12,7 @@ class log_in extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar:AppBar(
         elevation:0,
         backgroundColor: Colors.white,
         leading: InkWell(
@@ -37,50 +40,11 @@ class log_in extends StatelessWidget {
             SizedBox(height: 20,),
             Text("Welcome Back",style: TextStyle(fontSize: 24),),
             SizedBox(height: 70,),
-            Container(
-              width: double.infinity,
-              height: 50,
-              padding: EdgeInsets.only(left: 20,right: 20),
-              child: TextFormField(
-                obscureText: false,
-                decoration: InputDecoration(
-                  labelText: "Email",
-                ),
-              ),
-            ),
+            text_box(text: "Email", obscure: false),
             SizedBox(height: 70,),
-            Container(
-              width: double.infinity,
-              height: 50,
-              padding: EdgeInsets.only(left: 20,right: 20),
-              child: TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "password",
-                ),
-              ),
-            ),
+            text_box(text: "password", obscure: true),
             SizedBox(height: 50,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text("Sign In"),
-                SizedBox(width: 20,),
-                Container(
-                  width: 49,
-                  height: 41,
-                  decoration: BoxDecoration(
-                      color: Color(0xFF477686),
-                      borderRadius: BorderRadius.all(Radius.circular(60)),
-                  ),
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                )
-              ],
-            ),
+            sign_button(text: "Sign In", icon_name: Icons.arrow_back),
             SizedBox(height: 50,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
